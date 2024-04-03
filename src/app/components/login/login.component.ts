@@ -24,22 +24,13 @@ export class LoginComponent implements OnInit{
 
   onSubmit() {
     if (this.loginForm.valid) {
-      // Lógica para autenticar al usuario
-      const credentials = this.loginForm.value;
-      
-      if (credentials.email === 'user@example.com' && credentials.password === '123') {
-        console.log(credentials + 'este es su usuario');
-        
-        //this.router.navigate(['/catalogo']);
-        // alert("Registro Exitoso")
-        
-      } else {
-        console.log('Sus datos son invalidos');
-        
-        // alert("Registro invalido")
-      }
+      const email = this.loginForm.value.email
+      const password = this.loginForm.value.password
+      this.router.navigate(['/catalogo'])
+      console.log('Email:', email);
+      console.log('Password:', password);
     } else {
-      // Manejar errores de validación
+      console.log('Formulario inválido');
     }
   }
 }

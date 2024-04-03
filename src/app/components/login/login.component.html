@@ -1,8 +1,11 @@
-<div class="container" id="container">
-    <h1>Login</h1>
-    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-        <input type="email" formControlName="email" placeholder="Email">
-        <input type="password" formControlName="password" placeholder="Password">
-        <button type="submit" [disabled]="loginForm.invalid">Login</button>
+<div class="login-container">
+    <link rel="stylesheet" href="./login.component.scss">
+
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="login-form">
+        <input type="email" formControlName="email" placeholder="Email" class="form-input">
+        <span>Este campo debe tener un '@' y un '.com'</span>
+        <input type="password" formControlName="password" placeholder="Password" class="form-input">
+        <span>Minimo 8 caracteres, mayusculas, minuscular y numeros</span>
+        <button type="submit" [disabled]="loginForm.invalid" class="submit-btn">Login</button>
     </form>    
 </div>
